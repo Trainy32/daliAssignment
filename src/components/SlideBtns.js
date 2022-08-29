@@ -14,17 +14,17 @@ const SlideBtns = (props) => {
   const setDisplayed = props.setDisplayed;
 
   const moveSlide = (direction) => {
-    if (direction === 'left' && displayed > 0 ) {
-      setDisplayed(() => displayed-1 )
-    } else if (direction ==='right' && displayed < dataLength-1) {
-      setDisplayed(() => displayed+1 )
+    if (direction === 'left' && displayed > 0) {
+      setDisplayed(() => displayed - 1);
+    } else if (direction === 'right' && displayed < dataLength - 1) {
+      setDisplayed(() => displayed + 1);
     }
-  }
+  };
 
   return (
     <BtnWrap dataLength={dataLength} displayed={displayed}>
-      <BsChevronLeft id='left' onClick={()=> moveSlide('left')}/>
-      <BsChevronRight id='right' onClick={()=> moveSlide('right')}/>
+      <BsChevronLeft id="left" onClick={() => moveSlide('left')} />
+      <BsChevronRight id="right" onClick={() => moveSlide('right')} />
     </BtnWrap>
   );
 };
@@ -42,15 +42,25 @@ const BtnWrap = styled.div`
   cursor: pointer;
 
   #left {
-    color: ${(props) => props.displayed > 0 ? '#000' : '#CCC' }
+    color: ${(props) => (props.displayed > 0 ? '#000' : '#CCC')};
   }
 
   #right {
-    color: ${(props) => props.displayed < props.dataLength-1 ? '#000' : '#CCC' }
+    color: ${(props) =>
+      props.displayed < props.dataLength - 1 ? '#000' : '#CCC'};
   }
 
   @media screen and (max-width: 720px) {
     color: #fff;
     padding-bottom: 14%;
+
+    #left {
+      color: ${(props) => (props.displayed > 0 ? '#fff' : '#CCC')};
+    }
+
+    #right {
+      color: ${(props) =>
+        props.displayed < props.dataLength - 1 ? '#fff' : '#CCC'};
+    }
   }
 `;
