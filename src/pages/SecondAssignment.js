@@ -19,9 +19,9 @@ const SecondAssignment = () => {
   const mockArr = Array.from({length:5}, (item, idx) => idx);
   
   const handleScroll = () => {
-    if (window.scrollY > titleRef.current.offsetTop) {
+    if (window.scrollY > titleRef.current?.offsetTop) {
       setIsScrolled(()=>true) 
-    } else if (window.scrollY < titleRef.current.offsetTop) {
+    } else if (window.scrollY < titleRef.current?.offsetTop) {
       setIsScrolled(()=>false) 
     }
   };
@@ -110,6 +110,7 @@ const Photo = styled.div`
 
 const PostTitle = styled.h1`
   font-size: 21px;
+  line-height:144%;
   margin: 20px;
 `;
 

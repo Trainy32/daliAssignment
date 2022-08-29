@@ -69,6 +69,7 @@ module.exports = function (webpackEnv) {
       },
       compress: true,
       port: 9000,
+      historyApiFallback: true,
     },
   };
 };
